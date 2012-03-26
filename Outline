@@ -1,0 +1,44 @@
+Author:     Philip Molloy
+Date:       March 31, 2012
+Project:    a video game based on pong
+
+Purpose:
+    A simple one-person ping-pong game.
+
+System Interface:
+    An ncurses interface which creates data structures known as windows.
+    A default window called stdscr, which is the size of the temrinal
+    screen is supplied.
+
+    - The random number function to determine what speed to serve the ball
+    - Each time the ball bounces of the paddle, the speed of the ball is
+        changed by a small, random, amount
+
+    Signals are managed with sigaction, which provides a substantial
+    improvement over the signal system call. Ideally this would be
+    handled with select.
+
+Screen Management:
+    - The size of the court depends on the size of the terminal
+    - The court must be surrounded by a three character wide border on
+        all sides
+    - The size of the paddle should be about one third the size
+        of the court
+    - The paddle must always stay within one column
+    - The paddle may not leave the court
+    - The ball is served from the middle of the court
+    - If the ball gets past the paddle the ball is out of play
+    - Display the time and balls remaining
+
+Program Flow:
+    - Initialize the ncurses library
+    - Create and display the court, paddle and ball
+    - ...
+
+Resources:
+    - www.tldp.org/HOWTO/NCURSES-Programming-HOWTO/
+
+Bugs:
+    - Inadequate error handling
+    - Game time is not displayed on the scoreboard
+    - Tabs may be used instead of spaces in some parts of the source code

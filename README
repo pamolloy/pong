@@ -1,0 +1,14 @@
+NAME
+    pong - a Unix version of pong
+
+SYNOPSIS
+    This is a one-person ping-pong game. The object of the game is to
+    keep the ball (i.e. `O') in play as long as possible using the
+    paddle (i.e. a line of `#').
+
+    Move the paddle up and down the screen, one row at a time, by
+    pressing the 'k' and 'm' keys, respectively.
+
+    After three balls are out of play the game is over.
+
+    Press the `Q' key to quit the game.
