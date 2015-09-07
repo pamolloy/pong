@@ -21,7 +21,7 @@
 
 void start();
 void end();
-int ticks = 0;	// Number of alarm signals
+int ticks = 0;  // Number of alarm signals
 
 int main()
 {
@@ -56,7 +56,7 @@ int main()
     int c;
     while( (c = wgetch(table)) != 'Q' ) {
         if (c == ERR && errno != EINTR)
-            break;	//TODO This is a real error
+            break;  //TODO This is a real error
         if (c == KEY_UP)
             move_bar(endzone, paddle, 1);
         if (c == KEY_DOWN)
@@ -148,8 +148,8 @@ void setup_signal()
 {
     struct sigaction siginfo;
     
-    signal(SIGINT, SIG_IGN);	    // Ignore interrupts during game
-    siginfo.sa_flags = 0;	        // All off, esp. SA_RESTART
+    signal(SIGINT, SIG_IGN);        // Ignore interrupts during game
+    siginfo.sa_flags = 0;           // All off, esp. SA_RESTART
     siginfo.sa_handler = add_tick;
     sigemptyset(&siginfo.sa_mask);
     sigaction(SIGALRM, &siginfo, NULL);
@@ -161,7 +161,7 @@ void setup_signal()
  */
 void add_tick( int signal )
 {
-	ticks++;
+    ticks++;
 }
 
 /*

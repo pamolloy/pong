@@ -56,9 +56,9 @@ int move_ball( WINDOW *table, struct ball *ppb, struct bar *paddle )
     if ( (ppb->y + ppb->yd) == table->_begy )
         ppb->yd = 1;
     /* Move the ball along y */
-    if ( ppb->yc > 0 ) {	// If NOT at next y coordinate
-        ppb->y += ppb->yd;	// move along y
-        ppb->yc--;			// record move
+    if ( ppb->yc > 0 ) {    // If NOT at next y coordinate
+        ppb->y += ppb->yd;  // move along y
+        ppb->yc--;          // record move
     }
 
     /* Switch direction if at paddle */
@@ -73,13 +73,13 @@ int move_ball( WINDOW *table, struct ball *ppb, struct bar *paddle )
     if ( (ppb->x + ppb->xd) == table->_begx )
         ppb->xd = 1;
     /* Move the ball along x */
-    if ( ppb->xc > 0 ) {	// If NOT at next x coordinate
-        ppb->x += ppb->xd;	// move along x
-        ppb->xc--;			// record move
+    if ( ppb->xc > 0 ) {    // If NOT at next x coordinate
+        ppb->x += ppb->xd;  // move along x
+        ppb->xc--;          // record move
     }
     /* Keep going if the ball has reached the next point */
     if ( ppb->yc == 0 && ppb->xc == 0 ) {
-        ppb->yc = ppb->yn;	// Assign new point
+        ppb->yc = ppb->yn;  // Assign new point
         ppb->xc = ppb->xn;
         move_ball(table, ppb, paddle);
     }
