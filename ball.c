@@ -62,8 +62,8 @@ int move_ball( WINDOW *table, struct ball *ppb, struct bar *paddle )
     }
 
     /* Switch direction if at paddle */
-    if ( (ppb->x + ppb->xd) == table->_maxx ) { // Check for paddle
-        if ( pong(paddle, ppb->y + ppb->yd) == 0 ) {
+    if ( (ppb->x + ppb->xd) == table->_maxx ) { // Check for end of table
+        if ( pong(paddle, ppb->y) == 0 ) {
             return 0;
         }
         //TODO Assign random number to yc, yn, xc, xn, yd, xd
