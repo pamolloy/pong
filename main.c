@@ -175,6 +175,7 @@ void start()
     }
     noecho();               // Disable echo of getch
     cbreak();               // Disable line buffering
+    halfdelay(1);           // Delay tenths of a second if no char input
     nonl();                 // Disable new line
     intrflush(NULL, FALSE); // Prevent flush on keyboard interrupt
     if ( curs_set(0) == ERR ) {
