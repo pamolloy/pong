@@ -12,3 +12,6 @@ SYNOPSIS
     After three balls are out of play the game is over.
 
     Press the `Q' key to quit the game.
+
+BUILD
+    Install curses (e.g. `aptitude install lib32ncurses5') and then run `make'.
